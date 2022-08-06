@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "List of todos";
+}
+@model List<todoproject.Models.TodoModel>;
+
+<h2>Todo List</h2>
+<style>    h2 {
+        text-align: center;
+    }</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Task</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todo in Model)
+        {
+            @if (todo.Finishdate == DateTime.MaxValue)
+            {
+                <tr>
+                    <td>@todo.Id</td>
+                    <td>@todo.Name</td>
+                    <td>
+                        <a asp-controller="Todo" asp-action="Complete" asp-route-id="@todo.Id">
+                            Mark as completed
+                        </a>
+
+                    </td>
+                </tr>
+}
+           
+        }
+    </tbody>
+    @if (@Model.Count() == 0)
+    {
+        <caption class="text-center mt-5">Create a TODO</caption>
+    }
+</table>
