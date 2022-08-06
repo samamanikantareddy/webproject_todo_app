@@ -13,15 +13,15 @@
                 <h5>
                     Name: @Model.Name
                 </h5>
-               
+                </div>
 
+
+                <div class="card-footer">
+                    <form asp-controller="Todo" asp-action="CompleteTodo" asp-route-id="@Model.Id" method="delete">
+                        <button class="btn btn-block btn-alert" type="submit"> press on completion </button>
+                    </form>
+                </div>
             </div>
-            <div class="card-footer">
-                <form asp-controller="Todo" asp-action="CompleteTodo" asp-route-id="@Model.Id" method="delete">
-                    <button class="btn btn-block btn-danger" type="submit"> is task completed?</button>
-                </form>
-            </div>
-        </div>
     </div>
 
 </div>

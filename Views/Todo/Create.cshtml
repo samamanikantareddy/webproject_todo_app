@@ -9,21 +9,21 @@
         <div class="card">
 
             <div class="card-body">
-                <form asp-controller="Todo" asp-action="CreateTodo" method="post">
+                <form asp-controller="Todo" asp-action="newtodo" method="post">
                     <div class="mb-3">
                         <label class="form-label">
-                            No
+                            Id
                         </label>
-                        <input asp-for="Id" type="number" class="form-control" min="0" required />
+                        <input asp-for="Id" type="text" class="form-control" min="0" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">
-                            Task
+                            Task to be done
                         </label>
                         <input asp-for="Name" type="text" class="form-control" required />
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                        <button type="submit" class="btn btn-success btn-block">Add to List</button>
                     </div>
                 </form>
             </div>
