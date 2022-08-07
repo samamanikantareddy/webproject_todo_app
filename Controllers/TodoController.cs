@@ -5,6 +5,7 @@ namespace todoproject.Controllers
 {
     public class TodoController : Controller
     {
+        //created a list of todo model
         private static List<TodoModel> todos = new List<TodoModel>();
         public IActionResult Index()
         {
